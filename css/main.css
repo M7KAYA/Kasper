@@ -98,17 +98,22 @@ header .container nav > i {
     color: white;
     font-size: 22px;
     margin-right: 10px;
+    cursor: pointer;
+    transition: var(--main-transition-duration);
+}
+header .container nav > i:hover {
+    color: var(--main-color);
 }
 header .container nav ul {
     display: flex;
-    transition: opacity 2s;
+    transition: opacity var(--main-transition-duration), visibility var(--main-transition-duration);
 }
 header .container nav ul li a {
     display: inline-block;
     color: white;
     text-decoration: none;
     padding: 30px 10px;
-    transition: 0.3s;
+    transition: var(--main-transition-duration);
 }
 @media (max-width: 767px) {
     header .container nav ul li:not(:last-child) a {
@@ -127,6 +132,11 @@ header .container nav form i {
     padding: 5px 0 5px 10px;
     border-left: 2px solid white;
     margin-left: 5px;
+    cursor: pointer;
+    transition: var(--main-transition-duration);
+}
+header .container nav form i:hover {
+    color: var(--main-color);
 }
 header .container nav form input {
     outline: none;
@@ -160,16 +170,17 @@ header .container nav form input::placeholder {
         display: block;
     }
     header .container nav ul {
-        display: none;
+        display: block;
+        visibility: hidden;
+        opacity: 0;
         position: absolute;
         left: 15px;
         top: 80px;
         width: calc(100% - 30px);
         background-color: #0000009c;
-        opacity: 0;
     }
     header .container nav ul.active {
-        display: block;
+        visibility: visible;
         opacity: 1;
     }
     header .container nav ul li a {
@@ -193,7 +204,7 @@ header .container nav form input::placeholder {
     position: absolute;
     top: 0;
     left: 0;
-    transition: var(--main-transition-duration);
+    transition: calc(var(--main-transition-duration) + 0.5s);
 }
 .landing .overlay::before {
     content: "";
