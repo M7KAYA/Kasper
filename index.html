@@ -20,10 +20,12 @@
       <header>
         <div class="container">
           <div class="logo">
-            <img src="data/imgs/logo.png" alt="" />
+            <a href="#home" id="logo">
+                <img src="data/imgs/logo.png" alt="Kasper Logo" title="Kasper Logo" />
+            </a>
           </div>
-          <nav>
-            <i class="fa-solid fa-bars"></i>
+          <nav role="navigation">
+            <i class="fa-solid fa-bars" aria-label="Toggle navigation menu" title="Toggle navigation"></i>
             <ul>
               <li><a class="active" href="#home">Home</a></li>
               <li><a href="#services">Services</a></li>
@@ -33,13 +35,13 @@
               <li><a href="#contact">Contact</a></li>
             </ul>
             <form class="search-box">
-              <i class="fa-solid fa-magnifying-glass"></i>
+              <i class="fa-solid fa-magnifying-glass" aria-label="Open search" title="Open search"></i>
               <input type="search" placeholder="Search..." />
             </form>
           </nav>
         </div>
       </header>
-      <section id="home" class="landing">
+      <section id="home" class="landing home">
         <div class="overlay"></div>
         <div class="container">
           <div class="text">

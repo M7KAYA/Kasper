@@ -106,6 +106,7 @@ header .container nav > i:hover {
 }
 header .container nav ul {
     display: flex;
+    will-change: opacity, visibility;
     transition: opacity var(--main-transition-duration), visibility var(--main-transition-duration);
 }
 header .container nav ul li a {
@@ -151,7 +152,8 @@ header .container nav form input {
     width: 0;
     background-color: var(--transparent-color-1);
     border-radius: 3px;
-    transition: 0.3s;
+    transition: var(--main-transition-duration);
+    will-change: width, opacity;
     caret-color: var(--main-color);
     color: white;
 }
@@ -178,6 +180,7 @@ header .container nav form input::placeholder {
         top: 80px;
         width: calc(100% - 30px);
         background-color: #0000009c;
+        will-change: opacity;
     }
     header .container nav ul.active {
         visibility: visible;
