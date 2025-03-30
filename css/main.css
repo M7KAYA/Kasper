@@ -151,7 +151,7 @@ header .container nav form input {
     width: 0;
     background-color: var(--transparent-color-1);
     border-radius: 3px;
-    transition: 0.3s;
+    transition: var(--main-transition-duration);
     caret-color: var(--main-color);
     color: white;
 }
