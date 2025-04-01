@@ -100,7 +100,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 document.addEventListener("DOMContentLoaded", function () {
   let bullets = document.querySelectorAll(".bullets span");
-  let landingSectionOverlay = document.querySelector(".overlay");
+  let landingSectionOverlay = document.querySelector(".landing");
   let rightArrow = document.querySelector(".arrow .right");
   let leftArrow = document.querySelector(".arrow .left");
 
