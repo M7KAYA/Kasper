@@ -15,6 +15,25 @@
 html {
   scroll-behavior: smooth;
 }
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #1b1b1b;
+}
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(45deg, #19c8fa, #17b5e0, #149ec4);
+  border-radius: 10px;
+  border: 2px solid #1b1b1b;
+  transition: background 0.3s ease-in-out;
+  cursor: grab;
+}
+::-webkit-scrollbar-thumb:active {
+  cursor: grabbing;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(45deg, #17b5e0, #149ec4, #1289aa);
+}
 * {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -261,32 +280,26 @@ header .container nav form input::placeholder {
   background-repeat: no-repeat;
   transition: var(--main-transition-duration);
 }
-/* .landing .overlay::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: #0000009c;
-} */
-.landing .container {
+.landing .content {
+  width: 50%;
+  background-color: var(--transparent-color);
   position: absolute;
   top: 50%;
   left: 0;
   transform: translateY(-50%);
-  width: 50%;
   padding: 0;
+  display: flex;
+  justify-content: flex-end;
+  padding: 50px;
 }
-.landing .container .text {
-  background-color: var(--transparent-color);
+.landing .content .text {
+  max-width: 500px;
   color: white;
-  padding: 50px 50px 50px 80px;
 }
-.landing .container .text h1 {
+.landing .content .text h1 {
   line-height: var(--main-line-height);
 }
-.landing .container .text p {
+.landing .content .text p {
   margin-top: 15px;
   font-size: 13px;
   line-height: var(--main-line-height);
@@ -319,8 +332,8 @@ header .container nav form input::placeholder {
 }
 .landing .bullets span {
   display: inline-block;
-  width: 25px;
-  height: 25px;
+  width: 18px;
+  height: 18px;
   border-radius: 50%;
   border: 1px solid #a2a2a2;
   cursor: pointer;
@@ -332,7 +345,11 @@ header .container nav form input::placeholder {
 }
 
 @media (max-width: 991px) {
-  .landing .container {
+  .landing .content {
+    justify-content: center;
+  }
+  .landing .content,
+  .landing .content .text {
     width: 100%;
   }
 }
