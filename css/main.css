@@ -3,7 +3,9 @@
     --main-color: #19c8fa;
     --transparent-color: #0f748fb3;
     --transparent-color-1: #0f748f;
+    --secondary-text-color: #777;
     --main-padding: 100px;
+    --main-line-height: 2;
     --main-transition-duration: 0.3s;
 }
 /*TODO End Variables */
@@ -56,6 +58,50 @@ ul {
     .container {
         width: 1170px;
     }
+}
+.heading-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 70%;
+    margin: 0 auto 50px;
+    position: relative;
+}
+.heading-box .heading {
+    font-size: 50px;
+    font-weight: 400;
+    text-transform: uppercase;
+    margin-bottom: 25px;
+    position: relative;
+}
+.heading-box .heading::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: -26px;
+    width: 100px;
+    height: 2px;
+    background-color: black;
+    transform: translate(-50%, -50%);
+}
+.heading-box .heading::after {
+    content: "";
+    position: absolute;
+    bottom: -25px;
+    left: 50%;
+    width: 14px;
+    height: 14px;
+    background-color: white;
+    border: 2px solid black;
+    border-radius: 50%;
+    transform: translate(-50%, 50%);
+}
+.heading-box p {
+    color: var(--secondary-text-color);
+    margin-top: 25px;
+    text-align: center;
+    line-height: var(--main-line-height);
 }
 /*TODO End Global Rules */
 /*TODO Start Header */
@@ -193,10 +239,8 @@ header .container nav form input::placeholder {
 /*TODO End Header */
 /*TODO Start landing */
 .landing {
-    position: absolute;
-    top: 0;
-    width: 100%;
     height: 100vh;
+    position: relative;
 }
 .landing .overlay {
     background-image: url(../data/imgs/landing-4.jpg);
@@ -232,12 +276,12 @@ header .container nav form input::placeholder {
     padding: 50px 50px 50px 80px;
 }
 .landing .container .text h1 {
-    line-height: 1.5;
+    line-height: var(--main-line-height);
 }
 .landing .container .text p {
     margin-top: 15px;
     font-size: 13px;
-    line-height: 1.8;
+    line-height: var(--main-line-height);
 }
 .landing .arrow {
     position: absolute;
@@ -285,3 +329,37 @@ header .container nav form input::placeholder {
     }
 }
 /*TODO End Landing */
+/*TODO Start Services */
+.services {
+    padding-top: var(--main-padding);
+    padding-bottom: var(--main-padding);
+    position: relative;
+}
+.services .container .services-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    gap: 50px;
+}
+.services .container .services-content .service {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+}
+.services .container .services-content .service .service-text h3 {
+    color: var(--main-color);
+    margin-bottom: 30px;
+}
+.services .container .services-content .service .service-text p {
+    color: var(--secondary-text-color);
+    line-height: var(--main-line-height);
+}
+@media (max-width: 767px) {
+    .services .container .services-content .service {
+        flex-direction: column;
+        align-items: center;
+    }
+    .services .container .services-content .service .service-text {
+        text-align: center;
+    }
+}
+/*TODO End Services */
