@@ -106,7 +106,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // مصفوفة الصور (تأكد من صحة المسارات)
   let backgrounds = [
+    "data/imgs/landing-1-resized.jpg",
     "data/imgs/landing-2.jpg",
+    "data/imgs/landing-3.jpg",
     "data/imgs/landing-4.jpg",
     "data/imgs/landing-5.jpg",
   ];
