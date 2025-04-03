@@ -146,3 +146,29 @@ document.addEventListener("DOMContentLoaded", function () {
     updateActiveBullet(newIndex);
   });
 });
+
+
+document.addEventListener("DOMContentLoaded", function() {
+  const menuItems = document.querySelectorAll(".portfolio .container ul li");
+  const images = document.querySelectorAll(".portfolio .portfolio-content .img-box");
+
+  function filterImages(category) {
+      images.forEach(img => {
+          img.style.display = "none"; // إخفاء جميع الصور
+          if (category === "all" || img.getAttribute("data-category") === category) {
+              img.style.display = "block"; // إظهار الصور التي تنتمي للفئة المحددة
+          }
+      });
+  }
+
+  menuItems.forEach(item => {
+      item.addEventListener("click", function() {
+          document.querySelector(".portfolio .container ul li.active").classList.remove("active"); // إزالة الكلاس active من العنصر الحالي
+          this.classList.add("active"); // إضافة الكلاس active للعنصر الذي تم الضغط عليه
+          filterImages(this.getAttribute("data-category")); // تصفية الصور بناءً على الفئة
+      });
+  });
+
+  // تصفية الصور عند تحميل الصفحة ليظهر كل المحتوى في البداية
+  filterImages("all");
+});
