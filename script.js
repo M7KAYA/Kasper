@@ -169,6 +169,6 @@ document.addEventListener("DOMContentLoaded", function() {
       });
   });
 
-  // تصفية الصور عند تحميل الصفحة ليظهر كل المحتوى في البداية
+  //! تصفية الصور عند تحميل الصفحة ليظهر كل المحتوى في البداية
   filterImages("all");
 });
