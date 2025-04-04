@@ -362,7 +362,7 @@ header .container nav form input::placeholder {
 }
 .services .container .services-content {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
   gap: 50px;
 }
 .services .container .services-content .service {
@@ -437,15 +437,15 @@ header .container nav form input::placeholder {
   .our-design .img-box {
     display: none;
   }
+  .our-design .text {
+    padding: 100px 25px;
+  }
 }
 /*TODO End Our Design */
 /*TODO Start Portfolio */
 .portfolio {
   padding-top: var(--main-padding);
   padding-bottom: var(--main-padding);
-}
-.portfolio .container {
-  
 }
 .portfolio .container ul {
   width: fit-content;
@@ -533,4 +533,153 @@ header .container nav form input::placeholder {
 .portfolio span a:hover {
   background-color: #1faad2;
 }
-/*TODO! End Portfolio */
+/*TODO End Portfolio */
+/*TODO Start Video */
+.video {
+  position: relative;
+}
+.video video {
+  display: block;
+}
+.video .video-section-content {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  width: 100%;
+  background-color: var(--transparent-color);
+  color: white;
+  padding: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.video .video-section-content h2 {
+  text-transform: uppercase;
+  font-weight: normal;
+  font-size: 28px;
+}
+.video .video-section-content p {
+  margin: 20px 0;
+}
+.video .video-section-content button {
+  outline: none;
+  border: transparent;
+  display: block;
+}
+.video .video-section-content button a {
+  display: block;
+  text-decoration: none;
+  background-color: black;
+  color: white;
+  padding: 10px 15px;
+  cursor: pointer;
+  transition: var(--main-transition-duration);
+}
+.video .video-section-content button a:hover {
+  color: var(--main-color);
+}
+/*TODO End Video */
+/*TODO Start About */
+.about {
+  padding-top: var(--main-padding);
+  padding-bottom: calc(var(--main-padding) * 3);
+}
+@media (max-width: 767px) {
+  .about {
+    padding-bottom: calc(var(--main-padding) + 50px);
+  }
+}
+/*TODO End About */
+/*TODO Start Status */
+.status {
+  padding-top: var(--main-padding);
+  padding-bottom: var(--main-padding);
+  background-image: url('../data/imgs/stats.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+.status .container .img-box {
+  position: absolute;
+  top: -260px;
+  left: 50%;
+  transform: translateX(-56.25%);
+  z-index: -1;
+}
+.status .container .img-box img {
+  display: block;
+}
+@media (max-width: 767px) {
+  .status .container .img-box {
+    width: 500px;
+    top: -140px;
+    transform: translateX(-56.25%);
+  }
+  .status .container .img-box img {
+    max-width: 100%;
+  }
+}
+@media (max-width: 599px) {
+  .status .container .img-box {
+    width: 400px;
+    top: -140px;
+    transform: translateX(-55%);
+  }
+}
+.status .container .status-content {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.status .container .status-content .box {
+  width: 25%;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: var(--transparent-color);
+  padding: 80px 0;
+}
+@media (max-width: 991px) {
+  .status .container .status-content .box {
+    width: 50%;
+  }
+}
+@media (max-width: 767px) {
+  .status .container .status-content .box {
+    width: 100%;
+  }
+}
+.status .container .status-content .box span.icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+}
+.status .container .status-content .box span.icon i {
+  transition: var(--main-transition-duration);
+  cursor: pointer;
+}
+.status .container .status-content .box:first-child span.icon i {
+  margin-left: 1px;
+}
+.status .container .status-content .box span.icon:hover i {
+  color: var(--main-color);
+}
+.status .container .status-content .box p {
+  font-size: 50px;
+  font-weight: bold;
+  margin: 25px 0;
+}
+.status .container .status-content .box span:last-child {
+  font-size: 14px;
+}
+/*TODO End Status */
