@@ -461,6 +461,11 @@ header .container nav form input::placeholder {
   width: 75px;
   text-align: center;
 }
+@media (max-width: 420px) {
+  .portfolio .container ul li {
+    width: initial;
+  }
+}
 .portfolio .container ul li.active,
 .portfolio .container ul li:hover {
   color: white;
@@ -683,3 +688,289 @@ header .container nav form input::placeholder {
   font-size: 14px;
 }
 /*TODO End Status */
+/*TODO Start Skills */
+.skills-section {
+  padding-top: var(--main-padding);
+  padding-bottom: var(--main-padding);
+}
+.skills-section .container {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
+@media (max-width: 991px) {
+  .skills-section .container {
+    flex-direction: column;
+  }
+}
+.skills-section .container .small-heading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin-bottom: 40px;
+}
+.skills-section .container .small-heading h3 {
+  text-transform: uppercase;
+  font-weight: normal;
+  margin-bottom: 15px;
+}
+.skills-section .container .small-heading p {
+  color: var(--secondary-text-color);
+  line-height: var(--main-line-height);
+}
+
+.skills-section .container .skills,
+.skills-section .container .testimonials {
+  flex: 1;
+}
+
+.skills-section .container .skills .skills-content {
+  /* display: none; */
+}
+.skills-section .container .skills .skills-content .skill {
+  margin-bottom: 25px;
+}
+.skills-section .container .skills .skills-content .skill .skill-name {
+  margin-bottom: 15px;
+  text-transform: uppercase;
+}
+.skills-section .container .skills .skills-content .skill .full {
+  width: 100%;
+  height: 30px;
+  background-color: #dedadc;
+}
+.skills-section .container .skills .skills-content .skill .full .progress {
+  width: 0;
+  height: 100%;
+  background-color: var(--main-color);
+  position: relative;
+  transition: width 1s ease-in-out;
+}
+.skills-section .container .skills .skills-content .skill .full .progress::before {
+  content: attr(data-progress);
+  position: absolute;
+  right: 0;
+  top: -40px;
+  background-color: black;
+  color: white;
+  padding: 5px;
+  border-radius: 5px;
+  transform: translateX(50%);
+}
+.skills-section .container .skills .skills-content .skill .full .progress::after {
+  content: "";
+  position: absolute;
+  border: 7px solid;
+  border-color: black transparent transparent;
+  right: 0;
+  top: -12px;
+  transform: translateX(50%);
+}
+
+.skills-section .container .testimonials {
+  flex: 1;
+}
+.skills-section .container .testimonials .testimonials-content .team {
+  /* display: none; */
+}
+.skills-section .container .testimonials .testimonials-content .team .person {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 60px;
+}
+.skills-section .container .testimonials .testimonials-content .team .person {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+.skills-section .container .testimonials .testimonials-content .team .person:first-child {
+  padding-top: 0;
+  padding-bottom: 20px;
+}
+.skills-section .container .testimonials .testimonials-content .team .person:last-child {
+  padding-top: 20px;
+  padding-bottom: 0;
+}
+.skills-section .container .testimonials .testimonials-content .team .person:not(:last-child)  {
+  border-bottom: 1px solid #cdcdcd;
+}
+.skills-section .container .testimonials .testimonials-content .team .person .img-box {
+  width: 120px;
+}
+.skills-section .container .testimonials .testimonials-content .team .person .img-box img {
+  max-width: 100%;
+  display: block;
+  border-radius: 50%;
+}
+.skills-section .container .testimonials .testimonials-content .team .person .text {
+  flex: 1;
+  position: relative;
+}
+.skills-section .container .testimonials .testimonials-content .team .person .text .info {
+  line-height: var(--main-line-height);
+}
+.skills-section .container .testimonials .testimonials-content .team .person .text .name {
+  text-align: right;
+  text-transform: capitalize;
+  font-size: 14px;
+  color: var(--secondary-text-color);
+}
+.skills-section .container .testimonials .testimonials-content .shuffel-teames {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+}
+.skills-section .container .testimonials .testimonials-content .shuffel-teames li {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  border: 1px solid #aaa;
+  transition: var(--main-transition-duration);
+  cursor: pointer;
+}
+.skills-section .container .testimonials .testimonials-content .shuffel-teames li:not(:last-child) {
+  margin-right: 5px;
+}
+.skills-section .container .testimonials .testimonials-content .shuffel-teames li.active,
+.skills-section .container .testimonials .testimonials-content .shuffel-teames li:hover {
+  background-color: var(--main-color);
+}
+/*TODO End Skills */
+/*TODO Start Quote */
+.quote {
+  position: relative;
+  padding-top: var(--main-padding);
+  padding-bottom: var(--main-padding);
+  background-image: url('../data/imgs/quote.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.quote .text {
+  padding: 0 30px;
+  display: flex;
+  flex-direction: column;
+}
+.quote q {
+  position: relative;
+  color: white;
+  font-size: 1.7rem;
+  line-height: calc(var(--main-line-height) - 0.5);
+}
+.quote span {
+  position: relative;
+  color: white;
+  margin-top: 12px;
+}
+/*TODO End Quote */
+/*TODO End Pricing */
+.pricing {
+  padding-top: var(--main-padding);
+  padding-bottom: var(--main-padding);
+}
+.pricing .pricing-content {
+
+}
+.pricing .pricing-content .plans {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 30px;
+}
+.pricing .pricing-content .plans .plan {
+  text-align: center;
+}
+.pricing .pricing-content .plans .plan > div {
+  border-top: 1px solid var(--main-color);
+  padding-left: 30px;
+  padding-right: 30px;
+}
+.pricing .pricing-content .plans .plan .level {
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+.pricing .pricing-content .plans .plan .level .name {
+  text-transform: uppercase;
+  font-size: 20px;
+  margin-bottom: 15px;
+}
+.pricing .pricing-content .plans .plan .level span {
+  font-weight: bold;
+  font-size: 50px;
+  position: relative;
+}
+.pricing .pricing-content .plans .plan .level span::before {
+  content: "$";
+  top: 0;
+  left: -16px;
+}
+.pricing .pricing-content .plans .plan .level span::after {
+  content: "/Mo";
+  bottom: 0;
+  right: -43px;
+}
+.pricing .pricing-content .plans .plan .level span::before,
+.pricing .pricing-content .plans .plan .level span::after {
+  position: absolute;
+  font-size: 20px;
+}
+.pricing .pricing-content .plans .plan .features {
+
+}
+.pricing .pricing-content .plans .plan .features p {
+  padding: 20px 0;
+}
+.pricing .pricing-content .plans .plan .features p:not(:last-child) {
+  border-bottom: 1px solid var(--main-color);
+}
+.pricing .pricing-content .plans .plan .buy {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.pricing .pricing-content .plans .plan .buy button {
+  display: block;
+  background-color: var(--main-color);
+  color: white;
+  outline: none;
+  border: none;
+  padding: 12px 10px;
+  margin-top: 20px;
+  cursor: pointer;
+  transition: var(--main-transition-duration);
+}
+.pricing .pricing-content .plans .plan .buy button:hover {
+  background-color: var(--transparent-color-1);
+}
+.pricing .pricing-content .request {
+  text-align: center;
+  margin-top: 35px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.pricing .pricing-content .request p {
+  font-size: 20px;
+  margin-bottom: 15px;
+}
+.pricing .pricing-content .request button {
+  display: block;
+  background-color: var(--main-color);
+  color: white;
+  outline: none;
+  border: none;
+  padding: 12px 10px;
+  cursor: pointer;
+  transition: var(--main-transition-duration);
+}
+.pricing .pricing-content .request button:hover {
+  background-color: var(--transparent-color-1);
+}
+/*TODO End Pricing */

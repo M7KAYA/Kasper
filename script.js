@@ -172,3 +172,35 @@ document.addEventListener("DOMContentLoaded", function() {
   //! تصفية الصور عند تحميل الصفحة ليظهر كل المحتوى في البداية
   filterImages("all");
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+  document.querySelectorAll(".progress").forEach(bar => {
+      let progressValue = bar.getAttribute("data-progress"); // جلب قيمة progress
+      bar.style.width = progressValue; // تعيين العرض بناءً على القيمة
+  });
+});
+
+
+// تحديد العناصر المطلوبة
+const shuffleTeames = document.querySelectorAll('.shuffel-teames li');
+const teams = document.querySelectorAll('.team');
+const skillsContents = document.querySelectorAll('.skills-content');
+
+// إضافة الحدث على الـ li
+shuffleTeames.forEach((li, index) => {
+  li.addEventListener('click', () => {
+    // إزالة الكلاس active من كل الـ li
+    shuffleTeames.forEach(item => item.classList.remove('active'));
+    
+    // إضافة الكلاس active للـ li اللي تم الضغط عليها
+    li.classList.add('active');
+    
+    // إخفاء كل الفرق و الـ skills
+    teams.forEach(team => team.style.display = 'none');
+    skillsContents.forEach(skill => skill.style.display = 'none');
+    
+    // عرض الفريق و الـ skills المتوافقين مع الـ li
+    teams[index].style.display = 'block';
+    skillsContents[index].style.display = 'block';
+  });
+});
